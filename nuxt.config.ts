@@ -8,12 +8,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  image: {
-    inject: true,
-  
-  },
+ 
   components:[
-    { path: '/content' },
+    { path: '~/content' },
   ]
   
 })

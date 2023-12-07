@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxt/content": "latest",
     "@nuxt/image": "^1.1.0",
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "sharp": "^0.33.0"
   }
 }
