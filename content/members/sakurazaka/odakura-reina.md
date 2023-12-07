@@ -1,7 +1,14 @@
+odakura reina
+
+![Tanigucih](/_nuxt/assets/image/members/sakurazaka/reina.jpg)
+
 ::card
 odakura reina
-![Taniguchi](/_nuxt/assets/image/members/sakurazaka/airi.jpg)
 
 #description
-asdadsddsfddfs
+se is
+
+
+![Tanigucih](/_nuxt/assets/image/members/sakurazaka/reina.jpg)
+
 ::

@@ -1,17 +1,15 @@
 <template>
-  <p>{{ route }}</p>
   <main>
-    <ContentRenderer :value="data" />
+    <ContentDoc />
   </main>
+  
 </template>
 
 <script setup>
- const   {route}  = useRoute().params
- console.log(route)
- const { data } = await useAsyncData('member', 
-() => queryContent('members', 'sakurazaka').where({title: 'taniguchi airi'}).findOne())
- 
- 
+
+const { data } = await useAsyncData('singleMember', () => queryContent('sakurazaka').where({title : 'taniguchi airi'}).findOne())
+
+ console.log(data)
 </script>
 <!-- <template>
      <pre>
