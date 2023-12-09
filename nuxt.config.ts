@@ -9,8 +9,6 @@ export default defineNuxtConfig({
     },
   },
  
-  components:[
-    { path: '~/content' },
-  ]
+  
   
 })

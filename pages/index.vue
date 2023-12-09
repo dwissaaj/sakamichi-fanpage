@@ -3,30 +3,36 @@
     <Title>Sakamichi</Title>
     <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
-  <section class="w-screen items-center justify-center flex flex-col ">
-    <div class=" text-center">
-      <ContentDoc class="prose font-inter" />
+  <div class="">
+    <section class="items-center justify-center flex flex-col ">
+    <div class=" text-center ">
+      <ContentDoc class="prose font-inter text-sm lg:text-lg " />
     </div>
   </section>
-
-  <div class="flex flex-col my-12">
+  <section class="">
     <div>
-      <Groupintro :groupName=postNogi.groupName :description=postNogi.description :memberUrl=postNogi.memberUrl
+      <HomeGroup :groupName=postNogi.groupName :description=postNogi.description :memberUrl=postNogi.memberUrl
         :groupImg=postNogi.groupImg :color=postNogi.color />
     </div>
+  </section>
+  </div>
+  <section>
     <div>
-      <Groupintro :groupName=postSaku.groupName :description=postSaku.description :memberUrl=postSaku.memberUrl
+      <HomeGroup :groupName=postSaku.groupName :description=postSaku.description :memberUrl=postSaku.memberUrl
         :groupImg=postSaku.groupImg :color=postSaku.color />
     </div>
+  </section>
+  <section>
     <div>
-      <Groupintro :groupName=postHina.groupName :description=postHina.description :memberUrl=postHina.memberUrl
+      <HomeGroup :groupName=postHina.groupName :description=postHina.description :memberUrl=postHina.memberUrl
         :groupImg=postHina.groupImg :color=postHina.color />
     </div>
-  </div>
+  </section>
+  
 </template>
 
 <script setup lang="ts">
-import { Groupintro } from '#components';
+
 const postSaku = {
   groupName: "Sakurazaka46 | 櫻坂46",
   description: "They rebranding into Sakurazaka46 in 2020.Their main color in pink and white. Per december 2023 have 7th single with 3rd generation member",
