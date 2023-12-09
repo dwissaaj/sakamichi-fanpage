@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="prose">
     <ContentDoc />
   </main>
   
@@ -7,9 +7,6 @@
 
 <script setup>
 
-const { data } = await useAsyncData('singleMember', () => queryContent('sakurazaka').where({title : 'taniguchi airi'}).findOne())
-
- console.log(data)
 </script>
 <!-- <template>
      <pre>

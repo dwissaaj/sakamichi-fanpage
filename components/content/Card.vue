@@ -1,11 +1,14 @@
 <template>
-    <ContentSlot :use="$slots.card" unwrap="img a p">
+    <div >
        <div class="flex flex-col gap-4 items-center"> 
-        <slot name="imageMember" />
+        <slot class="rounded-lg" name="imageMember" />
         <slot name="links" />
-        <slot name="description" />
+        <slot class="text-2xl" name="description" />
+        <slot class="text-2xl" name="funfact" />
+
+        <slot class="penlight" name="penlight" />
        </div>
-    </ContentSlot>
+    </div>
 </template>
 
 <script setup>
