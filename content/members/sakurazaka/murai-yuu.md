@@ -21,12 +21,14 @@ head:
 ---
 
 ::card
-#imageMember
+
+#memberName
 murai yuu
 
 #description
 She have the most experience for dancing in all 3th generation sakurazaka46. Ranking 1 in athletic test soko saku
 
+#imageMember
 ![murai yuu](/_nuxt/assets/image/members/sakurazaka/murai.jpg)
 
 #funfact
@@ -36,15 +38,5 @@ She have the most experience for dancing in all 3th generation sakurazaka46. Ran
 
 ::
 
-::penlight
-
-#penOne
-blue
-
-#penTwo
-red
-
-penHexOne="bg-sky-500" penHexTwo="bg-red-500"
 
 
-::

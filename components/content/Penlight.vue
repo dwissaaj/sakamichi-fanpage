@@ -1,5 +1,4 @@
 <template>
-    <slot />
     <p :class="`${props.penHexOne} p-3 rounded-md`">{{ props.penOne }}</p>
     <div class="flex gap-5">
         
