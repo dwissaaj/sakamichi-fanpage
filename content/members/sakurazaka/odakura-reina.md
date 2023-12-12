@@ -8,7 +8,7 @@ image:
   height: 300
 profilePic : '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
 groupcolor : 'bg-pink-500'
-penOne : 'purple'
+penOne : 'bg-red-500'
 
 head:
   meta:
@@ -21,14 +21,10 @@ head:
     - name: 'copyright'
       content: '© 2023 Sakamichi Online'
 ---
-
 ::card
-  :::alert{:props=''}
-  class
-  :::
 
 #memberName
-[Blue]{style="background: green;" .custom-class #custom-id}!
+Odakura Reina
 
 #description
 She is the 3th gen of sakurazaka46. Also the third ojou sama
@@ -39,9 +35,10 @@ house in karuizawa)
 #imageMember
 ![odakura reina](/_nuxt/assets/image/members/sakurazaka/reina.jpg)
 
-
-::
+#funfact
 - The dog breed miniatur pinsher
 - she broke her foot when doing kick boxing
+::
+
 
 

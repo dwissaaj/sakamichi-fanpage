@@ -1,9 +1,9 @@
 <script setup>
-defineProps(["type"])
+defineProps(['type'])
 </script>
 
 <template>
-  <div :class="[type]">
+  <div :style="[type]">
     <ContentSlot :use="$slots.default" unwrap="p" />
   </div>
 </template>
