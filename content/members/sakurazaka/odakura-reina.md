@@ -8,6 +8,8 @@ image:
   height: 300
 profilePic : '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
 groupcolor : 'bg-pink-500'
+penOne : 'purple'
+
 head:
   meta:
     - name: 'keywords'
@@ -21,7 +23,12 @@ head:
 ---
 
 ::card
-odakura reina
+  :::alert{:props=''}
+  class
+  :::
+
+#memberName
+[Blue]{style="background: green;" .custom-class #custom-id}!
 
 #description
 She is the 3th gen of sakurazaka46. Also the third ojou sama
@@ -29,8 +36,12 @@ character. It's because she have luxury car, house (made from
 marble, expensive breed of dog, and a private
 house in karuizawa)
 
+#imageMember
 ![odakura reina](/_nuxt/assets/image/members/sakurazaka/reina.jpg)
+
 
 ::
 - The dog breed miniatur pinsher
 - she broke her foot when doing kick boxing
+
+

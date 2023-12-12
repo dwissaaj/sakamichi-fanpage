@@ -31,9 +31,19 @@ She have the most experience for dancing in all 3th generation sakurazaka46. Ran
 #imageMember
 ![murai yuu](/_nuxt/assets/image/members/sakurazaka/murai.jpg)
 
+#penlight
+  :::penlight
+    #penHexOne
+    bg-red-500
+
+    #penHexTwo
+    bg-red-500
+  :::
+
 #funfact
 - Kira kira all round
 - her emoticon is usagi or rabbit
+
 
 
 ::

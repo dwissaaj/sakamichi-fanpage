@@ -1,12 +1,19 @@
 <template>
-  <main class="prose">
+  <!-- <div class="max-w-full flex items-center justify-center">
+    <ContentDoc class="prose" />
+  </div> -->
+  <ContentRenderer :value="post">
     <ContentDoc />
-  </main>
-  
+    </ContentRenderer>
+  <pre>
+    {{ post }}
+  </pre>
 </template>
 
 <script setup>
 
+const { data: post } = await useAsyncData('slug', () => queryContent('members').where({_path: $route.path}).find())
+console.log(post)
 </script>
 <!-- <template>
      <pre>

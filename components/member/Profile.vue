@@ -1,14 +1,16 @@
 <template>
-    <div class="flex flex-col justify-center items-center">
-        <div>
-            <NuxtLink :to="$props.pathFile">
-                {{ props.memberName }}
-            </NuxtLink>
+    <NuxtLink :to="$props.pathFile">
+        <div :class="`${props.groupcolor} w-40 h-fit rounded-md  p-4 flex flex-col gap-3 justify-center items-center`">
+
+            <div>
+                <img class="w-24 rounded-xl" :src="$props.profilePic" :alt="props.memberName" />
+            </div>
+            <div >
+                <p>{{ props.memberName }}</p>
+            </div>
+            
         </div>
-        <div>
-            <img class="w-24 rounded-xl" :src="props.profilePic" :alt="props.memberName" />
-        </div>
-    </div>
+    </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +19,7 @@ const props = defineProps({
     generation: String,
     group: String,
     profilePic: String,
-    penlight: String,
+    groupcolor: String,
     pathFile: String
 })
 </script>

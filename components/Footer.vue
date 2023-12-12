@@ -1,7 +1,7 @@
 <template>
           
       
-<footer class="my-12">
+<footer class="my-12 p-4">
   <div class=" flex flex-col md:flex-row justify-center gap-8">
     <div class="">
       <NuxtLink class="flex gap-8 justify-center items-center text-black/80 hover:text-teal-500"  to="https://www.nogizaka46.com/">
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div>
-    <p class="text-center font-raleway mt-4">Sakamichi Online 2023</p>
+    <p class="text-center font-raleway mt-8">Sakamichi Online 2023</p>
   </div>
 </footer>
 </template>
