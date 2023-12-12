@@ -1,5 +1,5 @@
 ---
-title : Odakura Reina
+title : Odakura Reina | 小田倉麗奈
 description: 'The ojou sama from sakurazaka46 3th generation'
 image:
   src: '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
@@ -24,7 +24,7 @@ head:
 ::card
 
 #memberName
-Odakura Reina
+Odakura Reina | 小田倉麗奈
 
 #description
 She is the 3th gen of sakurazaka46. Also the third ojou sama

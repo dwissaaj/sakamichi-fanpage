@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="flex justify-center items-center">
     <ContentDoc class="prose" />
   </div>
 

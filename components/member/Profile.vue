@@ -5,7 +5,7 @@
             <div>
                 <img class="w-24 rounded-xl" :src="$props.profilePic" :alt="props.memberName" />
             </div>
-            <div >
+            <div class="text-white/80">
                 <p>{{ props.memberName }}</p>
             </div>
             
