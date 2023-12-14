@@ -21,7 +21,14 @@ head:
     - name: 'copyright'
       content: '© 2023 Sakamichi Online'
 ---
-::card
+::card{penHexOne="bg-pink-600" penHexTwo="bg-neutral-100"}
+ 
+  
+#penOne
+passion pink
+#penTwo
+white
+
 
 #memberName
 Odakura Reina | 小田倉麗奈
@@ -33,12 +40,18 @@ marble, expensive breed of dog, and a private
 house in karuizawa)
 
 #imageMember
-![odakura reina](/_nuxt/assets/image/members/sakurazaka/reina.jpg)
+![odakura reina](/_nuxt/assets/image/members/sakurazaka/reina.jpg){style="border-radius: 10px"}
 
 #funfact
 - The dog breed miniatur pinsher
 - she broke her foot when doing kick boxing
+
 ::
 
-
-
+<!--   
+   :::
+   penlight
+   {
+    penHexOne="bg-red-500" penHexTwo="bg-sky-500"}
+ 
+  ::: -->

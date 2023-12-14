@@ -8,6 +8,7 @@ export default {
     "./app.vue",
     "./index.vue",
     "./error.vue",
+    "./content/**/*.md"
   ],
   theme: {
     extend: {
@@ -21,5 +22,6 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  
 }
 

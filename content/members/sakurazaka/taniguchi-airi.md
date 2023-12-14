@@ -6,7 +6,7 @@ image:
   alt: 'Taniguci Airi'
   width: 400
   height: 300
-profilePic : '/_nuxt/assets/image/members/sakurazaka/airi.jpg'
+profilePic : '/assets/image/members/sakurazaka/airi.jpg'
 groupcolor : 'bg-pink-500'
 penOne : 'bg-red-500'
 
@@ -21,7 +21,13 @@ head:
     - name: 'copyright'
       content: '© 2023 Sakamichi Online'
 ---
-::card
+::card{penHexOne="bg-purple-500" penHexTwo="bg-red-500"}
+
+#penOne
+purple
+#penTwo
+red
+
 
 #memberName
 Taniguci Airi | 谷口愛季
@@ -30,7 +36,7 @@ Taniguci Airi | 谷口愛季
 Have a little brother and have excessive love toward him
 
 #imageMember
-![Taniguci Airi](/_nuxt/assets/image/members/sakurazaka/airi.jpg)
+![murai yuu](/_nuxt/assets/image/members/sakurazaka/airi.jpg){style="border-radius: 10px"}
 
 #funfact
 - Front row shounin yokyou 

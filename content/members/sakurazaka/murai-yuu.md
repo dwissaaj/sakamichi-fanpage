@@ -21,15 +21,21 @@ head:
     - name: 'copyright'
       content: '© 2023 Sakamichi Online'
 ---
-::card
+::card{penHexOne="bg-purple-500" penHexTwo="bg-blue-500"}
 
 #memberName
 Murai Yuu | 村井優
 
+#penOne
+purple
+#penTwo
+blue
+
 #description
 Kira kira all round meaning she can do anything
+
 #imageMember
-![Murai Yuu](/_nuxt/assets/image/members/sakurazaka/murai.jpg)
+![murai yuu](/_nuxt/assets/image/members/sakurazaka/murai.jpg){style="border-radius: 10px"}
 
 #funfact
 - Newest sakurazaka46 queen of sense(meaning she is weird)
