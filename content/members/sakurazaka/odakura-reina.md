@@ -2,11 +2,11 @@
 title : Odakura Reina | 小田倉麗奈
 description: 'The ojou sama from sakurazaka46 3th generation'
 image:
-  src: '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
+  src: '/profile/members/sakurazaka/reina.jpg'
   alt: 'Odakura Reina'
   width: 400
   height: 300
-profilePic : '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
+profilePic : '/profile/members/sakurazaka/reina.jpg'
 groupcolor : 'bg-pink-500'
 penOne : 'bg-red-500'
 
@@ -34,17 +34,19 @@ white
 Odakura Reina | 小田倉麗奈
 
 #description
-She is the 3th gen of sakurazaka46. Also the third ojou sama
+She is the 3th gen of sakurazaka46 born in Tokyo
+25 July 2004. She is the third ojou sama
 character. It's because she have luxury car, house (made from
 marble, expensive breed of dog, and a private
 house in karuizawa)
 
 #imageMember
-![odakura reina](/_nuxt/assets/image/members/sakurazaka/reina.jpg){style="border-radius: 10px"}
+![odakura reina](/profile/members/sakurazaka/reina.jpg){style="border-radius: 10px"}
 
 #funfact
 - The dog breed miniatur pinsher
 - she broke her foot when doing kick boxing
+- Famous with uweni wei jokes pun (Watch Soko Saku eps Reaction Check)
 
 ::
 

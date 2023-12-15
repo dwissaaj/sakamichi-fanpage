@@ -2,11 +2,11 @@
 title : Murai Yuu | 村井優
 description: 'The Queen of sense in sakurazaka46'
 image:
-  src: '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
+  src: '/profile/members/sakurazaka/murai.jpg'
   alt: 'Murai Yuu'
   width: 400
   height: 300
-profilePic : '/_nuxt/assets/image/members/sakurazaka/murai.jpg'
+profilePic : '/profile/members/sakurazaka/murai.jpg'
 groupcolor : 'bg-pink-500'
 penOne : 'bg-red-500'
 
@@ -32,13 +32,15 @@ purple
 blue
 
 #description
-Kira kira all round meaning she can do anything
+Her catchphrase is "Kira kira All round" meaning she can do anything. Born in Tokyo 18 August 2004
 
 #imageMember
-![murai yuu](/_nuxt/assets/image/members/sakurazaka/murai.jpg){style="border-radius: 10px"}
+![murai yuu](/profile/members/sakurazaka/murai.jpg){style="border-radius: 10px"}
 
 #funfact
 - Newest sakurazaka46 queen of sense(meaning she is weird)
+- Best Athletic in 3th generation
+
 ::
 
 

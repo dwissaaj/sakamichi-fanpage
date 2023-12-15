@@ -2,11 +2,11 @@
 title : Taniguci Airi | 谷口愛季
 description: 'Smallest in 3ki Sakurazaka'
 image:
-  src: '/_nuxt/assets/image/members/sakurazaka/reina.jpg'
+  src: '/profile/members/sakurazaka/airi.jpg'
   alt: 'Taniguci Airi'
   width: 400
   height: 300
-profilePic : '/assets/image/members/sakurazaka/airi.jpg'
+profilePic : '/profile/members/sakurazaka/airi.jpg'
 groupcolor : 'bg-pink-500'
 penOne : 'bg-red-500'
 
@@ -33,13 +33,18 @@ red
 Taniguci Airi | 谷口愛季
 
 #description
-Have a little brother and have excessive love toward him
+Born in Yamaguchi, 12 April 2005. The smallest in 3th generation
+sakurazaka46 and need a stool when sitting in Soko Saku
 
 #imageMember
-![murai yuu](/_nuxt/assets/image/members/sakurazaka/airi.jpg){style="border-radius: 10px"}
+![murai yuu](/profile/members/sakurazaka/airi.jpg){style="border-radius: 10px"}
 
 #funfact
 - Front row shounin yokyou 
+- Have excessive love toward her little brother and
+make her mom worried
+
+
 ::
 
 
