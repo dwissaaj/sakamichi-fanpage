@@ -1,8 +1,5 @@
 <template>
-  <Head>
-    <Title>Sakamichi</Title>
-    <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </Head>
+
   <div class="">
     <section class="items-center justify-center flex flex-col ">
     <div class=" text-center ">
@@ -54,4 +51,5 @@ const postHina = {
   memberUrl: "/members",
   color: "shadow-[13px_8px_0px_1px_rgba(56,189,248,0.5)] hover:shadow-[0px_0px_0px_1px_rgba(56,189,248,1)] bg-sky-400"
 }
+
 </script>
