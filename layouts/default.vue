@@ -6,6 +6,13 @@
       <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/">Home</NuxtLink>
       <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/members">Member
       </NuxtLink>
+      <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/tutorials">Tutorial
+      </NuxtLink>
+      <button disabled>
+        <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500 " href="/translate">Blog Translation
+      </NuxtLink>
+      </button>
+
     </div>
     <div class="font-inter my-4">
       <slot />
