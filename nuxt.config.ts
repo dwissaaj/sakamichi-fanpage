@@ -8,7 +8,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
- 
+  image: {
+    domains: ['https://vreovfluocylqbkhuatg.supabase.co/']
+  }
   
   
 })

@@ -10,7 +10,7 @@
                 <h1 class="text-lg">No Data Found About {{ $route.path }} </h1>
               </div>
               <div >
-                <NuxtLink class="w-24 p-2 bg-teal-500 text-center rounded-md w-" to="/tutorials" >Back </NuxtLink>
+                <NuxtLink class="w-24 p-2 bg-teal-500 text-center rounded-md w-" to="/translates" >Back </NuxtLink>
               </div>
               <div>
                 <img src="/profile/members/meme/meme-3.jpg" class="rounded-xl" alt="sorry reina" />

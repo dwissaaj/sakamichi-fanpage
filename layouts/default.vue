@@ -9,7 +9,7 @@
       <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/tutorials">Tutorial
       </NuxtLink>
       <button disabled>
-        <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500 " href="/translate">Blog Translation
+        <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500 " href="/translates">Blog Translation
       </NuxtLink>
       </button>
 

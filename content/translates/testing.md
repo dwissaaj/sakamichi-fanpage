@@ -23,5 +23,5 @@ head:
 
 # Testing file for blog
 
-testing file look at this cute reina
-![murai yuu](/profile/members/meme/meme-2.jpg)
+testing file look at this cute kaki haruka
+![murai yuu](https://vreovfluocylqbkhuatg.supabase.co/storage/v1/object/public/sakamichi/kaki%20cute.jpg)
