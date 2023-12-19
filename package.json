@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxthq/studio": "^1.0.6",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.8.1",
