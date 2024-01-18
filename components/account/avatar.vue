@@ -1,32 +1,50 @@
 <script setup lang="ts" >
 import { Icon } from '@iconify/vue'
+import { v4 as uuid} from 'uuid';
 
-const image = ref(null)
-const profile = ref(null)
-const uploadImage = async (event) => {
+const { data: session } = await useFetch('/api/client/identity', {key :' session'},)
+const supabase = useSupabaseClient()
+let profile = ref(null || String)
+const uploadImage = async (event: any) => {
     const file = event.target.files[0]
     console.log(file)
    }
    
 const handleSut = async (e: Event) => {
-  
-  const avatarFile: HTMLInputElement = e.target.files[0] 
-  console.log(avatarFile)
-  const {data, error: uploadError }  = await supabase
-  .storage
-  .from('images')
-  .upload(session?.value?.id + "/" + uuid() , avatarFile, {
-    cacheControl: '3600',
-    upsert: false
+
+const avatarFile  =  e.target as HTMLInputElement
+const file: File = (avatarFile.files as FileList)[0]
+console.log(avatarFile)
+const {data, error: uploadError }  = await supabase
+.storage
+.from('images')
+.upload(session?.value?.id + "/" + uuid() , file, {
+  cacheControl: '3600',
+  upsert: false
+})
+if (uploadError) throw uploadError
+
+if(data) {
+  let url = useStorageLink()
+  profile.value = url + data.path
+  const imgUrl = url + data.path
+  try {
+      await $fetch('/api/profile/avatar/add', {
+      method: 'post',
+      body: { 
+        imgUrl: imgUrl,
+      }
+     
   })
-  if (uploadError) throw uploadError
-
-  if(data) {
-    let url = "https://gczwatzfmrttrenqrvls.supabase.co/storage/v1/object/public/images/"
-
-    profile.value = url + data.path
-    console.log(profile.value)
+  console.log(data)
+  refreshNuxtData()
   }
+  catch ( error ) {
+      console.log(error)
+  }
+  console.log(data)
+  console.log(imgUrl)
+}
 
 }
 </script>

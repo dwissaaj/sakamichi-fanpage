@@ -23,7 +23,7 @@ const { data: identity} = await useFetch('/api/profile/client', {key :' identity
 
 const postData = async ()  => {
     try {
-        const {data} = await $fetch('/api/profile/change', {
+        const { status } = await useFetch('/api/profile/change', {
         method: 'post',
         body: { 
           name: formData.value.name,
@@ -32,7 +32,7 @@ const postData = async ()  => {
         }
        
     })
-    console.log(data)
+    console.log(status)
     refreshNuxtData()
     }
     catch ( error ) {

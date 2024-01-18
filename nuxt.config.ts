@@ -21,6 +21,8 @@ export default defineNuxtConfig({
   },
   nitro: {
     scanDirs: ['~/server/*']
+  },
+  typescript: {
+    typeCheck: true
   }
-  
 })

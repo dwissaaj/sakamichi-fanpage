@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
     return {users}
   }
   catch (error) {
-    return setResponseStatus(events, 404, 'Error')
+    return createError({statusCode: 404, statusMessage: `Something is error ${error}`})
   }
   
   

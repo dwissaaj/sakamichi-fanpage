@@ -33,21 +33,17 @@ const handleSut = async (e: Event) => {
     profile.value = url + data.path
     const imgUrl = url + data.path
     try {
-        const { data } = await $fetch('/api/profile/avatar/add', {
+        await $fetch('/api/profile/avatar/add', {
         method: 'post',
         body: { 
           imgUrl: imgUrl,
         }
-       
     })
-    console.log(data)
     refreshNuxtData()
     }
     catch ( error ) {
         console.log(error)
     }
-    console.log(data)
-    console.log(imgUrl)
   }
 
 }
