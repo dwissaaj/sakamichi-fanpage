@@ -1,25 +1,17 @@
 <template>
-  <div class="my-4">
-    
-    <div class="flex justify-center  gap-3
-     lg:gap-8 font-inter text-xl ">
-      <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/">Home</NuxtLink>
-      <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/members">Member
-      </NuxtLink>
-      <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500" href="/tutorials">Tutorial
-      </NuxtLink>
-      <button disabled>
-        <NuxtLink class="text-black/50 transition duration-150 ease-out hover:text-teal-500 " href="/translates">Blog Translation
-      </NuxtLink>
-      </button>
-
+  <div class="my-4 mx-auto container sticky top-0">
+    <div class="hidden md:block">
+      <LayoutMainbar />
     </div>
-    <div class="font-inter my-4">
+    <div class="md:hidden p-2 mx-auto container sticky top-0">
+      <LayoutSmallbar />
+    </div>
+    <div class="font-inter my-4  mx-auto container">
       <slot />
     </div>
     <div>
       <Footer />
-    
+
     </div>
   </div>
 </template>
