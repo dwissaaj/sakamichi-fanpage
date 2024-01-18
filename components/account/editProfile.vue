@@ -19,11 +19,11 @@ const formData = ref({
     oshimen: ['Odakura Reina']
 })
 
-const { data: identity} = await useFetch('/api/profile/user', {key :' identity'})
+const { data: identity} = await useFetch('/api/profile/client', {key :' identity'})
 
 const postData = async ()  => {
     try {
-        await $fetch('/api/profile/user', {
+        await $fetch('/api/profile/change', {
         method: 'post',
         body: { 
           name: formData.value.name,

@@ -13,8 +13,8 @@ useSeoMeta({
   ogImage: 'https://www.sakamichi.online/home/nogizaka.jpg',
 })
 
-const { data: session } = await useFetch('/api/session', {key :' session'})
-const { data: identity} = await  useFetch('/api/profile/user', {key :' identity'})
+const { data: session } = await useFetch('/api/client/identity', {key :' session'})
+const { data: identity} = await  useFetch('/api/profile/client', {key :' identity'})
 
 
 
