@@ -10,23 +10,45 @@ const uploadImage = async (e: Event) => {
    }
 
 
-const { data: session } = await useFetch('/api/account/user', {key :' session'},)
+const { data: session } = await useFetch('/api/client/identity', {key :' session'},)
 console.log(session?.value?.id)
 
 
+const handleSut = async (e: Event) => {
 
-const handleSubmit = async () => {
-  const fd = new FormData()
-    if(image.value) {
-      Array.from(image.value).forEach(file => (
-        fd.append(`avatar`, file)
-      ))
-    }
-    const data = await $fetch('/api/sds/sdsd', {
+  const avatarFile  =  e.target as HTMLInputElement
+  const file: File = (avatarFile.files as FileList)[0]
+  console.log(avatarFile)
+  const {data, error: uploadError }  = await supabase
+  .storage
+  .from('images')
+  .upload(session?.value?.id + "/" + uuid() , file, {
+    cacheControl: '3600',
+    upsert: false
+  })
+  if (uploadError) throw uploadError
+
+  if(data) {
+    let url = useStorageLink()
+    profile.value = url + data.path
+    const imgUrl = url + data.path
+    try {
+        const { data } = await $fetch('/api/profile/avatar/add', {
         method: 'post',
-        body: fd
+        body: { 
+          imgUrl: imgUrl,
+        }
+       
     })
-  
+    console.log(data)
+    refreshNuxtData()
+    }
+    catch ( error ) {
+        console.log(error)
+    }
+    console.log(data)
+    console.log(imgUrl)
+  }
 
 }
 </script>
@@ -34,7 +56,7 @@ const handleSubmit = async () => {
 <template>
 
     <div>
-      <form @submit.prevent="handleSubmit">
+      <form>
         <input
             id="profile"
             class="text-grass11 shadow-green7 focus:shadow-green8 inline-flex h-[35px] w-full flex-1 items-center justify-center "
