@@ -26,7 +26,6 @@ if (uploadError) throw uploadError
 
 if(data) {
   let url = useStorageLink()
-  profile.value = url + data.path
   const imgUrl = url + data.path
   try {
       await $fetch('/api/profile/avatar/add', {

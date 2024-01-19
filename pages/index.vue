@@ -1,5 +1,7 @@
 <template>
-
+<NuxtLoadingIndicator>
+  
+  <NuxtLayout>
   <div class="">
     <section class="items-center justify-center flex flex-col ">
     <div class=" text-center ">
@@ -25,7 +27,8 @@
         :groupImg=postHina.groupImg :color=postHina.color />
     </div>
   </section>
-  
+</NuxtLayout>
+</NuxtLoadingIndicator>
 </template>
 
 <script setup lang="ts">

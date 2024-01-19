@@ -1,4 +1,7 @@
 <template>
+
+
+ 
   <div class="my-4 mx-auto container sticky top-0">
     <div class="hidden md:block">
       <LayoutMainbar />
@@ -14,6 +17,7 @@
 
     </div>
   </div>
+
 </template>
 
 <script setup>
