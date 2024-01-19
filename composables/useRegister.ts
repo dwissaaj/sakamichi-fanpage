@@ -1,9 +1,13 @@
 export const useRegister = async (email : string, password: string) => {
     const supabase = useSupabaseClient()
+    const redirect = useLoadingIndicator()
+    const errMessage = ref()
+    const open = ref(false)
+    const timerRef = ref(0)
     try {
         const {  error } = await supabase.auth.signUp({
-          email: email.value,
-          password: password.value,
+          email: email,
+          password: password,
           options: {
             emailRedirectTo: 'http://localhost:3000/account'
           }

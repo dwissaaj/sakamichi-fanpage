@@ -13,7 +13,7 @@ const logOut = async () => {
     const { error } = await supabase.auth.signOut()
     if (error) throw error
     if (!error) {
-      navigateTo('/')
+      navigateTo('/members')
     }
   }
   catch (error) {

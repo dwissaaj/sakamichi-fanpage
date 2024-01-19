@@ -7,9 +7,7 @@ useSeoMeta({
   ogDescription: 'Sakamichi Online Fanbase for Sakamichi Series',
   ogImage: 'https://www.sakamichi.online/home/nogizaka.jpg',
 })
-definePageMeta({
-  middleware: 'regis-auth'
-})
+
 const supabase = useSupabaseClient()
 const email = ref("")
 const password = ref("")
@@ -17,7 +15,7 @@ const redirect = useLoadingIndicator()
 const errMessage = ref()
 async function signUp() {
   try {
-    const {  error } = await supabase.auth.signUp({
+    const {  data, error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
       options: {
@@ -31,8 +29,22 @@ async function signUp() {
     
     if(!error) {
       redirect.isLoading
-      errMessage.value =  'Redirect'
-      navigateTo('/account')
+      try {
+        await $fetch('/api/client/identity',{
+          method: 'post',
+          body: {
+            id: data?.user?.id,
+            email: data?.user?.email
+          }
+        })
+      }
+      catch(error) {
+        console.log(error)
+      }
+      finally {
+        errMessage.value =  'Redirect'
+        navigateTo('/account')
+      }
     }
   }
   catch (error) {

@@ -6,19 +6,19 @@ export default defineEventHandler(async (event) => {
   const userEmail = String(user?.email)
   const body = await readBody(event)
   try {
-    await prisma.user.update({
+    const {imgUrl} = await prisma.profile.update({
       where: {
         email: userEmail
       },
       data: {
-        imgUrl : body?.imgUrl
+        imgUrl : body?.imagePublic
       }
       
     })
-    return setResponseStatus(event, 201, 'Accepted')
+    return { imgUrl }
   }
   catch (error) {
-    return setResponseStatus(event, 404, 'Error')
+    return createError({statusCode : 400, message: 'Failed to Fetch'})
   }
   
   

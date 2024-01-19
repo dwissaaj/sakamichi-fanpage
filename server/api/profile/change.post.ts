@@ -1,13 +1,15 @@
 import { serverSupabaseUser } from '#supabase/server'
 import prisma from '~/middleware/db'
 export default defineEventHandler(async (event) => {
+
   const user = await serverSupabaseUser(event)
   const userEmail = String(user?.email)
+  const userId = String(user?.id)
   const body = await readBody(event)
   try {
-    const users = await prisma.user.update({
+    const users = await prisma.profile.update({
       where: {
-        email: userEmail
+        id: userId,
       },
       data: {
         name: body?.name,
@@ -19,7 +21,7 @@ export default defineEventHandler(async (event) => {
     return {users}
   }
   catch (error) {
-    return createError({statusCode: 404, statusMessage: `Something is error ${error}`})
+    return error
   }
   
   

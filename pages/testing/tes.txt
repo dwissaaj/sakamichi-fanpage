@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { v4 as uuid} from 'uuid'
 const supabase = useSupabaseClient()
 const profileurl = ref()
-const FinalUrl = ref()
 const state = ref()
 const image = ref<FileList | null >(null)
 // const uploadImage = async (e: Event) => {
@@ -11,7 +10,7 @@ const image = ref<FileList | null >(null)
 //     let image  = URL.createObjectURL(profile.value)
 //     return image 
 //    }
-const uploadImage = async (e: any) => {
+const uploadImage = async (e) => {
     const file = e.target.files[0]
     let final  = URL.createObjectURL(file)
     profileurl.value = final
@@ -38,17 +37,15 @@ const handleSut = async (e: Event) => {
   if(data) {
     state.value = 'Uploading.....'
     let url = useStorageLink()
-    const imagePublic = url + data.path
-    FinalUrl.value =  url + data.path
-    console.log(imagePublic)
+    const imgUrl = url + data.path
     try {
-        await $fetch('/api/profile/avatars/avatar', {
+        await $fetch('/api/profile/avatar/add', {
         method: 'post',
         body: { 
-          imgUrl: FinalUrl.value,
+          imgUrl: imgUrl,
         }
     })
-    console.log(FinalUrl)
+    console.log(imgUrl)
     }
     catch ( error ) {
         console.log(error)
@@ -64,19 +61,19 @@ const handleSut = async (e: Event) => {
 <template>
 
     <div>
-      <form >
+      <form @submit.prevent="handleSut">
         <input
             id="profile"
             class="text-grass11 shadow-green7 focus:shadow-green8 inline-flex h-[35px] w-full flex-1 items-center justify-center "
             type="file"
             accept="image/*"
-            @change="handleSut"
+            @change="uploadImage"
           >
           <button  type="submit"  class="bg-red-500 p-5">
             upload
             
           </button>
-          <p >{{ state }}</p>
+          <p @error="">{{ state }}</p>
       </form>
       <img :src="profileurl" alt="as" />
     </div>

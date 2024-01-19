@@ -4,7 +4,6 @@ import { v4 as uuid} from 'uuid';
 
 const { data: session } = await useFetch('/api/client/identity', {key :' session'},)
 const supabase = useSupabaseClient()
-let profile = ref(null || String)
 const uploadImage = async (event: any) => {
     const file = event.target.files[0]
     console.log(file)
