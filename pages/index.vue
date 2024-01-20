@@ -1,5 +1,7 @@
 <template>
 
+  
+  
   <div class="">
     <section class="items-center justify-center flex flex-col ">
     <div class=" text-center ">
@@ -25,7 +27,8 @@
         :groupImg=postHina.groupImg :color=postHina.color />
     </div>
   </section>
-  
+
+
 </template>
 
 <script setup lang="ts">
