@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-
+import { Icon } from '@iconify/vue'
 import { TabsContent, TabsIndicator, TabsList, TabsRoot, TabsTrigger } from 'radix-vue'
 definePageMeta({
   middleware: 'auth'
@@ -45,6 +45,14 @@ const { data: identity} = await  useFetch('/api/profile/client', {key :' identit
       </TabsList>
       <TabsContent class="flex flex-col gap-5 grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
         value="profile">
+        <div v-if="identity?.users?.imgUrl" class="flex justify-center items-center">
+        <NuxtImg :alt="(identity?.users?.name as string)" :src="identity?.users?.imgUrl" />
+        
+      </div>
+          <div v-else="!identity?.users?.imgUrl" class="flex justify-center items-center">
+            <Icon class="w-24 h-24" icon="radix-icons:avatar" />
+      </div>
+    
           <AccountAvatar />
           <AccountIdentity :name="identity?.users?.name" :oshimen="identity?.users?.oshimen" :country="identity?.users?.country" :email="session?.email" :id="session?.id" />
           <AccountEditProfile />

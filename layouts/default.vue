@@ -1,7 +1,7 @@
 <template>
 
 
- 
+  <NuxtLoadingIndicator color="#008080"  />
   <div class="my-4 mx-auto container sticky top-0">
     <div class="hidden md:block">
       <LayoutMainbar />

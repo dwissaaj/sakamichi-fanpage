@@ -1,61 +1,75 @@
 <script setup lang="ts" >
 import { Icon } from '@iconify/vue'
 import { v4 as uuid} from 'uuid';
-
-const { data: session } = await useFetch('/api/client/identity', {key :' session'},)
+const { data: identity } = await useFetch('/api/profile/client', {key :'identity'},)
 const supabase = useSupabaseClient()
-const uploadImage = async (event: any) => {
-    const file = event.target.files[0]
-    console.log(file)
+let isUploaded = ref(false)
+let stateDesc = ref({desc: true, uploaded: false})
+const urlExist = ref(false)
+const localImage = ref()
+const publicImage = ref('')
+const publicUrlExist = ref(false)
+const uploaded =  ref()
+const {isLoading } = useLoadingIndicator()
+const handleImageLocal = async (e: any) => {
+    const file = e.target.files[0]
+    let final  = URL.createObjectURL(file)
+    urlExist.value = true
+    localImage.value = final
+    uploaded.value = file
    }
-   
-const handleSut = async (e: Event) => {
 
-const avatarFile  =  e.target as HTMLInputElement
-const file: File = (avatarFile.files as FileList)[0]
-console.log(avatarFile)
-const {data, error: uploadError }  = await supabase
-.storage
-.from('images')
-.upload(session?.value?.id + "/" + uuid() , file, {
-  cacheControl: '3600',
-  upsert: false
-})
-if (uploadError) throw uploadError
-
-if(data) {
-  let url = useStorageLink()
-  const imgUrl = url + data.path
-  try {
-      await $fetch('/api/profile/avatar/add', {
-      method: 'post',
-      body: { 
-        imgUrl: imgUrl,
-      }
-     
+const uploadImage = async () => {
+  isLoading.value = true
+  useLoadingIndicator().start()
+  const {data, error: uploadError }  = await supabase
+  .storage
+  .from('avatar')
+  .upload(identity?.value?.users?.id + "/" + uuid() , uploaded.value, {
+    cacheControl: '3600',
+    upsert: false
   })
-  console.log(data)
-  refreshNuxtData()
-  }
-  catch ( error ) {
-      console.log(error)
-  }
-  console.log(data)
-  console.log(imgUrl)
-}
+  if (uploadError) throw uploadError
 
+  if(data) {
+    let url = useStorageLink()
+    publicImage.value = url + data.path
+    const reqUrl = url + data.path
+    console.log(reqUrl)
+    try {
+        await $fetch('/api/avatar/add', {
+        method: 'post',
+        body: { 
+          publicImage: reqUrl ,
+        }
+    })
+    publicUrlExist.value = true
+    }
+    catch ( error ) {
+        console.log(error)
+    }
+  }
+  useLoadingIndicator().finish()
+  stateDesc.value.desc = false
+  stateDesc.value.uploaded = true
+}
+const refreshData = async () => {
+  try {
+    await refreshNuxtData()
+  }
+  finally{
+
+  }
 }
 </script>
 
 
 <template>
     <DialogRoot>
+      
     <DialogTrigger
-      class=""
-    >
-    <div class="flex justify-center items-center">
-        <Icon class="w-24 h-24" icon="radix-icons:avatar" />
-    </div>
+      class="">
+      <button class="border-teal-500 border-2 p-2 rounded-md">Add Avatar</button>
     </DialogTrigger>
     <DialogPortal>
       <DialogOverlay class="bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0 z-30" />
@@ -66,35 +80,43 @@ if(data) {
           Upload Image
         </DialogTitle>
         <DialogDescription class="text-mauve11 mt-[10px] mb-5 text-[15px] leading-normal">
-         Maksimum size 1 mb with .png,.jpg, or .jpeg
+         <p v-show="stateDesc.desc">Maksimum size 1 mb with .png,.jpg, or .jpeg</p>
+         <p v-show="stateDesc.uploaded">Uploaded 💕 Refresh the page</p>
         </DialogDescription>
         <fieldset class="">
-        
+  
           <input
             id="profile"
             class="text-grass11 shadow-green7 focus:shadow-green8 inline-flex h-[35px] w-full flex-1 items-center justify-center "
             type="file"
             accept="image/*"
-             @change="uploadImage"
+            @change="handleImageLocal"
+            
           >
         </fieldset>
         
-       
-        <div class="mt-[25px] flex justify-end">
-          <DialogClose as-child>
+        <img v-show="urlExist" :src="localImage" alt="as" />
+        <div class="mt-[25px] flex flex-col justify-end">
+          
             <button
+            @click="uploadImage"
               class="bg-teal-500/50 text-green11 hover:bg-green5 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-semibold leading-none focus:shadow-[0_0_0_2px] focus:outline-none"
-            @click="uploadImage">
+            >
               Upload
             </button>
-          </DialogClose>
+         
+            
+        
         </div>
         <DialogClose
           class="text-grass11 hover:bg-green4 focus:shadow-green7 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
-          aria-label="Close"
+          aria-label="Close" as-child
         >
-          <Icon icon="lucide:x" />
-        </DialogClose>
+<button @click="refreshData">
+  <Icon icon="lucide:x" />
+
+</button>        
+</DialogClose>
       </DialogContent>
     </DialogPortal>
   </DialogRoot>

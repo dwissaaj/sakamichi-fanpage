@@ -3,19 +3,19 @@ import prisma from '~/middleware/db'
 export default defineEventHandler(async (event) => {
  
   const user = await serverSupabaseUser(event)
-  const userEmail = String(user?.email)
+  const userId = String(user?.id)
   const body = await readBody(event)
   try {
-    const {imgUrl} = await prisma.profile.update({
+     await prisma.profile.update({
       where: {
-        email: userEmail
+        id: userId
       },
       data: {
-        imgUrl : body?.imagePublic
+        imgUrl : body?.publicImage
       }
       
     })
-    return { imgUrl }
+    return 'Success'
   }
   catch (error) {
     return createError({statusCode : 400, message: 'Failed to Fetch'})

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    domains: ['https://vreovfluocylqbkhuatg.supabase.co/']
+    domains: ['https://olteescxepgigyhfwcfw.supabase.co']
   },
   supabase: {
     redirectOptions: {
